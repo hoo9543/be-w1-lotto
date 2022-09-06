@@ -26,8 +26,8 @@ public class Input {
         System.out.println("지난 주 당첨 번호를 입력해 주세요.");
         ArrayList<Integer> lottoNumbers = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
-        String inputNumbers = scan.next();
-        String numbers[] = inputNumbers.split(",");
+        String inputString = scan.nextLine().replaceAll(" ","");
+        String numbers[] = inputString.split(",");
 
         for (int i=0; i< numbers.length; i++){
             lottoNumbers.add(Integer.parseInt(numbers[i]));
@@ -35,6 +35,8 @@ public class Input {
 
         Collections.sort(lottoNumbers);
         return lottoNumbers;
+
+
     }
 
 }
