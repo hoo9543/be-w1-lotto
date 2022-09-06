@@ -1,6 +1,7 @@
 package lotto;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     public static final int Cost = 1000;
@@ -26,12 +27,18 @@ public class Main {
 
         ArrayList<Integer> winningNumber = input.inputLottoNumbers();
 
+        ArrayList<Integer> count = new ArrayList<>(Arrays.asList(0,0,0,0,0,0,0));
         for (ArrayList<Integer> lottoNumber:lottoNumbers){
-            output.counting(service.countCorrectNumber(winningNumber,lottoNumber));
+            int matchNum = service.countCorrectNumber(winningNumber,lottoNumber);
+            count.set(matchNum,count.get(matchNum)+1);
         }
 
-        output.printMatchResult();
-        output.printProfitRate(purchaseAmount);
+        output.printResultString();
+
+        for (int i=3;i<7;i++){
+            output.printLottoResult(i,count.get(i));
+        }
+        output.printProfitRate(purchaseAmount,count);
 
     }
 }
