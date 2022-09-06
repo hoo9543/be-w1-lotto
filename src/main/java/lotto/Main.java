@@ -15,8 +15,8 @@ public class Main {
         Service service = new Service();
         Output output = new Output();
 
-        int purchaseAmount = input.inputPrice();
-        int lottoNum = purchaseAmount/Cost;
+        int inputCost = input.inputPrice();
+        int lottoNum = inputCost/Cost;
         output.printLottoPurchase(lottoNum);
 
         ArrayList<ArrayList<Integer>> lottoNumbers = new ArrayList<>();
@@ -38,7 +38,7 @@ public class Main {
         for (int i=3;i<7;i++){
             output.printLottoResult(i,count.get(i));
         }
-        output.printProfitRate(purchaseAmount,count);
+        output.printProfitRate(inputCost,count);
 
     }
 }
