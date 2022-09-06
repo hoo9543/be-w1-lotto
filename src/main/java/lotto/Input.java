@@ -23,6 +23,7 @@ public class Input {
     }
     */
     public ArrayList<Integer> inputLottoNumbers(){
+        System.out.println("");
         System.out.println("지난 주 당첨 번호를 입력해 주세요.");
         ArrayList<Integer> lottoNumbers = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
